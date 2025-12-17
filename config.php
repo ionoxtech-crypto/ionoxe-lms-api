@@ -1,13 +1,13 @@
 <?php
 header('Content-Type: application/json');
 
-// Railway MySQL environment variables
-$host = getenv("MYSQLHOST");
-$user = getenv("MYSQLUSER");
-$pass = getenv("MYSQLPASSWORD");
-$db   = getenv("MYSQLDATABASE");
+$conn = new mysqli(
+    "sql304.infinityfree.com",   // DB host
+    "if0_40079571",              // DB user
+    "fkefnBs6rO",                // DB password
+    "if0_40079571_ionox"         // DB name
+);
 
-$conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     echo json_encode([
         "status" => "error",
